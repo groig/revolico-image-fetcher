@@ -3,13 +3,13 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://*.revolico.com/*
 // @grant       none
-// @version     0.2
+// @version     0.3
 // @author      roig
 // @description 5/26/2020, 1:46:05 PM
 // ==/UserScript==
 
 document.querySelectorAll("[data-cy=adPhoto]").forEach(element => {
-  element.addEventListener("mouseenter", event => {
+  element.addEventListener("click", event => {
     const adUrl = element.parentNode.firstChild.href;
     fetch(adUrl)
       .then(response => response.text())
@@ -23,8 +23,8 @@ document.querySelectorAll("[data-cy=adPhoto]").forEach(element => {
         img.style.left = `${event.clientX}px`;
         img.style.top = `${event.clientY}px`;
         const body = document.getElementsByTagName("body")[0];
+        img.addEventListener("click", () => body.removeChild(img));
         body.appendChild(img);
-        element.addEventListener("mouseleave", () => body.removeChild(img));
       });
   });
 });
