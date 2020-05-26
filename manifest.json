@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Revolico Image Fetcher",
+  "version": "0.1",
+
+  "description": "Fetchs the first image for an announcement on mouseover.",
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.revolico.com/*"],
+      "js": ["fetch.js"]
+    }
+  ]
+}
