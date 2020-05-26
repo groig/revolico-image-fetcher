@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://*.revolico.com/*
 // @grant       none
-// @version     0.1
+// @version     0.2
 // @author      roig
 // @description 5/26/2020, 1:46:05 PM
 // ==/UserScript==
