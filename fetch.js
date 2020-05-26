@@ -22,6 +22,7 @@ document.querySelectorAll("[data-cy=adPhoto]").forEach(element => {
         img.style.position = "absolute";
         img.style.left = `${event.clientX}px`;
         img.style.top = `${event.clientY}px`;
+        img.style.height = "500px";
         const body = document.getElementsByTagName("body")[0];
         img.addEventListener("click", () => body.removeChild(img));
         body.appendChild(img);
